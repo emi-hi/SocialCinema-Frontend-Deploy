@@ -1,0 +1,70 @@
+.columnlist{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y:auto;
+  overflow-x: hidden ;
+}
+
+.friend-card{
+  background-color: #ffd500;
+  min-height: 14vh;
+  max-height: 15vh;
+  min-width: 12vh;
+  max-width: 12vh;
+  margin: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  border: 2px solid black;
+  position: relative;
+  font-family: "Raleway", sans-serif;
+
+  img{
+    padding-top: 5px;
+    height: 40px;
+  }
+}
+
+
+.friend-night{
+  display:none;
+  z-index: 100;
+  position: absolute;
+  bottom: 3px;
+
+}
+
+.friend-night#trash{
+  height:4vh;
+  left: 3px;
+}
+
+.friend-night#add{
+  height: 3.5vh;
+  left: 3px;
+}
+
+.friend-night#eye{
+  right: 3px;
+  height: 3vh;
+}
+
+.friend-card:hover .friend-night{
+  display:block;
+}
+
+.user-name-text{
+  margin: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+
+/* IPHONE STYLES */
+@media only screen and (max-width: 551px) {
+  article.friends-container article section {
+    flex-direction: row;
+  }
+
+}

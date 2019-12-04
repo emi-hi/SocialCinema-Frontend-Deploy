@@ -1,0 +1,22 @@
+$font-title: 'Raleway', sans-serif;
+$font-text:'Roboto', sans-serif;
+
+$active-opacity: 1;
+$inactive-opacity: 0.15;
+
+$black: #222222;
+$white: #f0f0f0;
+$font-white: #d4d4d4;
+$spacing: 2rem;
+
+$movie-box-width: 80px;
+$movie-box-height: 120px;
+
+
+@mixin bubble(){
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  margin: 10px;
+  box-shadow: 5px 5px 10px grey;
+  
+}

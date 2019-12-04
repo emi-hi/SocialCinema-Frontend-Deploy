@@ -1,0 +1,216 @@
+@import "../components/variables.scss";
+
+section.genre {
+  padding: 0;
+  border: none;
+  background: none;
+  width: 9.2vw;
+  height: 7vw;
+  position: relative;
+  margin: 2px;
+
+  &:focus {
+    outline:none;
+  }
+  &:hover .genre-choices{
+    display:flex; 
+ }
+}
+
+.genre {
+  &-choices{
+    padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction:column-reverse;
+    display: none;
+    z-index: 100;
+    position: absolute;
+    left: 5%;
+    bottom: 30%;
+    cursor: pointer
+  }
+  &-image{
+    margin-top: 4px;
+    height: 4vw;
+    width: 6vw;
+  }
+  &-feeling-hate{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0.6;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &-feeling-love{
+    height: 100%;
+    position: absolute;
+    opacity: 0.8;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.genre-choices button {
+  border: .5px solid #949494;
+  border-radius: 5px;
+  cursor: pointer;
+  width:8vw;
+  &:focus {
+    outline:none;
+    }
+
+  &.unselected {
+    background-color:white;
+  }
+  &.selected#hategenre{
+    background-color: #ff0000;
+    border: 2px solid #8d0000;
+  }
+  &.selected#lovegenre{
+    background-color: rgb(255, 227, 67);
+    border: 2px solid rgb(255, 209, 7);
+    
+  }
+  &.selected#mehgenre{
+    background-color: rgb(187, 187, 187);
+    border: 2px solid rgb(87, 87, 87);;
+  }
+  &#hategenre:hover{
+    background-color: #ff0000;
+  }
+  &#lovegenre:hover{
+    background-color: rgb(255, 227, 67);
+  }
+  &#mehgenre:hover{
+    background-color:rgb(187, 187, 187);
+  }
+}
+
+
+.genre-name{
+  font-family: $font-title;
+  color:black;
+  margin:1px;
+  font-size: small;
+  font-weight: bold;
+  overflow-wrap: break-word;
+  overflow: hidden;
+}
+
+section.genres {
+  display: flex;
+  flex-direction: row;
+  font-family: $font-title;
+  flex-wrap: wrap;
+  height: 100%;
+  padding: 2px;
+  margin: 2px;
+  overflow-y:auto;
+  background: transparent;
+  @include bubble();
+  z-index: 5px;
+  cursor: pointer;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  button.reset{
+    font-family: $font-title;
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: small;
+    font-weight:bold;
+    margin-left: 40px;
+    &:focus {
+      outline:none;
+    }
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+}
+
+
+
+@media only screen and (max-width: 551px) {
+  section.genres{
+      justify-content: space-between;
+      padding-bottom: 20px;
+      padding-top:20px;
+    button.reset{
+      margin-left: 40px;
+      margin-right: 24px;
+      font-size: x-small;
+    }
+  }
+  section.genre{
+    width: 27vw;
+  }
+
+  .genre-image{
+    display: none;
+  }
+  .genre-choices{
+    bottom: -20%;
+    z-index: 10000; 
+    width: 20vw;
+     & button {
+       width:20vw
+     }
+  }
+  .genre-feeling-love{
+    opacity: 1;
+  }
+  button.genre {
+    width: 24vw;  
+    
+    .genre-name{
+      font-size: x-small;
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 551px) and (max-width: 900px) {
+  section.genres{
+    margin-bottom: 2vh;
+    z-index: 1000;
+
+    button.reset {
+      margin-left: 11px;
+    }
+  }
+
+  section.genre {
+    width: 9vw; 
+    }
+  .genre-name{
+    font-size: x-small;
+  }
+
+  label{
+    z-index: 1;
+    font-size: smaller;
+  }
+  .genre-choices{
+    bottom: 0%;
+    left: 10%;
+    width: 8vw;
+    z-index: 10000;    
+  }
+  span{
+    z-index: 1;
+    font-size: smaller;
+  }
+ }

@@ -1,0 +1,206 @@
+@import "variables.scss";
+
+.suggested-container{
+  @include bubble();
+  min-height: 500px;
+  max-height: 80vh;
+
+  h1, h2 {
+    font-family: $font-title;
+  }
+
+  img.reel{
+    height: 60vh;
+  }
+  .suggestion{
+    display: grid;
+    
+    h5.suggestion-error{
+      padding: 10px;
+      margin: 10px;
+      background-color: #fa9191;
+      border-radius: 15px;
+      font-size: medium;
+      
+    }
+    .suggestion-info{
+      display: flex;
+      flex-direction: row;
+      .movie-poster{
+        align-self: flex-start;
+        max-width: 25vw;
+        max-height: 65vh;
+        object-fit: contain;
+        margin-right: 15px;
+        margin-left:15px;
+        margin-bottom: 15px;
+      }
+      article{
+   
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        font-size: 15px;
+        margin-right: 15px;
+        p{
+          margin-top:2px;
+          overflow-x: auto;
+          overflow-y: scroll;
+          max-height: 28vh;
+        }
+        h4{
+          margin-top: 1px;
+        }
+        h6.next{
+          margin-left: auto;
+          font-size: small;
+          text-align: center;
+          color: black;
+        }
+
+        h6.later{
+          font-size: medium;
+          text-align: center;
+          color: black;
+        }
+
+        img.next{
+          height: 10vh;
+          // width: 95px;
+          margin-left: auto;
+          &:hover{
+            animation-name: spin;
+            animation-duration: 3000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear; 
+            cursor:pointer;
+
+          }
+        }
+
+        img.later{
+          height: 8vh;
+          margin-left: auto;
+          margin-right: auto;
+          &:hover{
+            height: 77px;
+            width: 77px;
+            cursor:pointer;
+          }
+        }
+
+        a{
+          text-align: center;
+          text-decoration: none;
+          color: black;
+          margin: 10px;
+        }
+        a:hover{
+          font-size:medium;
+          margin-bottom: 9px;
+        }
+        span{
+          text-align: center;
+        }
+      }
+    }
+  }
+  .spinner{
+    height: 60vh;
+    animation-name: spin;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+  }
+
+  @keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+  }
+}
+
+
+/* IPHONE STYLES */
+@media only screen and (max-width: 551px) {
+  .suggested-container{
+    max-height:none;
+    .movie-title{
+      font-size: large;
+    }
+    img.reel {
+      height: 20vh;
+    }
+    .spinner{
+      height: 20vh;
+    }
+    .suggestion{
+      display: grid;
+      width:100%;
+  
+      .suggestion-info{
+        flex-direction: column;
+
+
+
+        .movie-poster {
+          max-width: 60vw;
+          margin-left: auto;
+          margin-right: auto;
+        }
+       article h6.next{
+
+         font-size: x-small;
+        margin-bottom: 0px;
+       }
+       article img.next{
+          height: 50px;
+          width: 50px;
+        }
+       }
+    }
+  }
+}
+
+  
+  
+  @media only screen and (min-width: 551px) and (max-width: 790px) {
+    .suggested-container{
+      max-height:none;
+      .suggestion{
+        margin-right: 10px;
+        margin-left: 10px;
+        display: grid;
+        width:100%;
+    
+        .suggestion-info{
+          display:block;
+          .movie-poster{
+          max-height: 50vh;
+          }
+
+          h6.later{
+            position: absolute;
+
+
+          }
+          img.later{
+            position: absolute;
+            margin-top:15px;
+          }
+
+        }
+      }  
+      img.reel {
+        height: 30vh;
+      }
+      .spinner{
+        height: 30vh;
+      }
+    }
+  }
+
+

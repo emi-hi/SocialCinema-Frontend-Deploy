@@ -1,0 +1,19 @@
+@import "./components/variables.scss";
+
+h5,
+h6 {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: $font-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $white;
+  color: $black;
+}
+
+code {
+  font-family: $font-text;
+}

@@ -1,0 +1,78 @@
+@import "../variables.scss";
+
+.favorite_add {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 6px;
+}
+
+.empty {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  p{
+    height: 20px;
+    padding-left: 10px;
+    font-style: italic;
+  }
+}
+
+.favorite-form {
+  background-color: white;
+}
+
+.list {  
+  @include bubble();
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  height: 25vh;
+  align-content: center;
+  // margin-top:1px;
+  overflow-x:scroll;
+  align-items: center;    
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.list-friends{
+  height: 16vh;
+}
+
+.favSelector {
+  display: flex;
+  flex-direction: row;
+}
+
+.close-modal{
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+/* IPHONE STYLES */
+@media only screen and (max-width: 550px) {
+  .list {
+    -webkit-overflow-scrolling: touch;
+    height: 16vh;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 900px) {
+  .list {
+    -webkit-overflow-scrolling: touch;
+    height: 16vh;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
