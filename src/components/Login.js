@@ -40,7 +40,7 @@ export default function Signup(props) {
             placeholder="Enter Password"
             onChange={e => setPassword(e.target.value)}
         />
-
+        <br/>
         <input type="submit" value="Login"/>
       </form>
     </main>

@@ -50,6 +50,7 @@ export default function Signup(props) {
             placeholder="Confirm Password"
             onChange={e => setPasswordConf(e.target.value)}
         />
+        <br/>
         <input type="submit" value="Signup"/>
       </form>
     </main>
