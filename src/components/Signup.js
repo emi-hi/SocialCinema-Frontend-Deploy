@@ -31,9 +31,6 @@ export default function Signup(props) {
       </span>
       <div>{error}</div>
       <form onSubmit={signup}>
-        <label>
-          Username:
-        </label>
         <input 
             type="text" 
             value={name}
@@ -41,18 +38,12 @@ export default function Signup(props) {
             placeholder="Enter Username"
             onChange={e => setName(e.target.value)}
         />
-        <label>
-          Password:
-        </label>
         <input 
             type="password" 
             value={password}
             placeholder="Enter Password"
             onChange={e => setPassword(e.target.value)}
         />
-        <label>
-          Confirm Password:
-        </label>
         <input 
             type="password" 
             value={passwordConf}
